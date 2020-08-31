@@ -3,9 +3,9 @@ package com.oluwafemi.gadsleaderboard
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class BoardActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_board)
+        setContentView(R.layout.activity_main)
     }
 }
