@@ -7,10 +7,10 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="background">@drawable/launch</item>
         <item name="fontFamily">@font/roboto_bold</item>
-        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
         <item name="android:textSize">@dimen/Heading</item>
-
     </style>
+
 
     <style name="ToolbarTextAppearance">
         <item name="fontFamily">@font/roboto_bold</item>

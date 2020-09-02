@@ -1,7 +1,9 @@
 package com.oluwafemi.gadsleaderboard
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
@@ -15,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        }
         viewPager = binding.pager
         val tabLayout = binding.tabLayout
 
