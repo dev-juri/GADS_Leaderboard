@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.oluwafemi.gadsleaderboard.R
-import com.oluwafemi.gadsleaderboard.databinding.FragmentLeaderBoardBinding
+import com.oluwafemi.gadsleaderboard.databinding.FragmentSkillBinding
 import com.oluwafemi.gadsleaderboard.viewModels.LeaderBoardViewModel
 
 class SkillFragment : Fragment() {
@@ -25,7 +25,7 @@ class SkillFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding : FragmentLeaderBoardBinding = DataBindingUtil.inflate(
+        val binding : FragmentSkillBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_skill, container, false
         )
         binding.lifecycleOwner = viewLifecycleOwner
