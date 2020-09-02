@@ -1,6 +1,7 @@
 package com.oluwafemi.gadsleaderboard.network
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.oluwafemi.gadsleaderboard.models.SkillLeaders
 import com.oluwafemi.gadsleaderboard.models.TimeLeaders
@@ -28,10 +29,10 @@ val submission_retrofit = retrofit.baseUrl(SUBMISSION_BASE_URL)
 
 interface GadsAPIService {
     @GET("/api/hours")
-    fun getLearningLeaders(): Deferred<LiveData<TimeLeaders>>
+    fun getLearningLeaders(): Deferred<MutableLiveData<List<TimeLeaders>>>
 
     @GET("/api/skilliq")
-    fun getSkillLeaders(): Deferred<LiveData<SkillLeaders>>
+    fun getSkillLeaders(): Deferred<MutableLiveData<List<SkillLeaders>>>
 }
 
 interface Submission {
