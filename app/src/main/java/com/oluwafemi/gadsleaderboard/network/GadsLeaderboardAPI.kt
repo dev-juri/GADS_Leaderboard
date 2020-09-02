@@ -21,18 +21,18 @@ val retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
     .addCallAdapterFactory(CoroutineCallAdapterFactory())
 
-val leaderboard_retrofit = retrofit.baseUrl(LEADERS_BASE_URL)
+val leaderboardRetrofit = retrofit.baseUrl(LEADERS_BASE_URL)
     .build()
 
-val submission_retrofit = retrofit.baseUrl(SUBMISSION_BASE_URL)
+val submissionRetrofit = retrofit.baseUrl(SUBMISSION_BASE_URL)
     .build()
 
 interface GadsAPIService {
     @GET("/api/hours")
-    fun getLearningLeaders(): Deferred<MutableLiveData<List<TimeLeaders>>>
+    fun getLearningLeaders(): Deferred<List<TimeLeaders>>
 
     @GET("/api/skilliq")
-    fun getSkillLeaders(): Deferred<MutableLiveData<List<SkillLeaders>>>
+    fun getSkillLeaders(): Deferred<List<SkillLeaders>>
 }
 
 interface Submission {
@@ -48,9 +48,9 @@ interface Submission {
 
 object GadsLeaderboardAPI {
     val GadsService : GadsAPIService by lazy {
-        leaderboard_retrofit.create(GadsAPIService::class.java)
+        leaderboardRetrofit.create(GadsAPIService::class.java)
     }
     val submissionService : Submission by lazy {
-        submission_retrofit.create(Submission::class.java)
+        submissionRetrofit.create(Submission::class.java)
     }
 }

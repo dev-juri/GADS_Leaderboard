@@ -8,20 +8,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.oluwafemi.gadsleaderboard.R
+import com.oluwafemi.gadsleaderboard.adapter.LearningAdapter
 import com.oluwafemi.gadsleaderboard.databinding.FragmentLearningBinding
-import com.oluwafemi.gadsleaderboard.databinding.FragmentSkillBinding
 import com.oluwafemi.gadsleaderboard.viewModels.LearningViewModel
-import com.oluwafemi.gadsleaderboard.viewModels.SkillViewModel
 
 class LearningFragment : Fragment() {
 
     private val viewModel by lazy {
         ViewModelProvider(this).get(LearningViewModel::class.java)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -32,6 +26,8 @@ class LearningFragment : Fragment() {
     )
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        binding.recyclerLearning.adapter = LearningAdapter()
 
         return binding.root
     }

@@ -1,5 +1,8 @@
 package com.oluwafemi.gadsleaderboard.models
 
+import com.google.gson.annotations.JsonAdapter
+
+
 data class TimeLeaders(
     val name : String,
     val hours : String,
