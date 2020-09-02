@@ -5,11 +5,15 @@ data class TimeLeaders(
     val hours : String,
     val country : String,
     val badgeUrl : String
-)
+) {
+    val contentDescription : String = "$hours learning hours, $country"
+}
 
 data class SkillLeaders (
     val name : String,
     val score : String,
     val country: String,
     val badgeUrl: String
-)
+) {
+    val contentDescription : String = "$score skill IQ Score, $country"
+}

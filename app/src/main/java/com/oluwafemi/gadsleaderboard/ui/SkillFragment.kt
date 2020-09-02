@@ -9,12 +9,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.oluwafemi.gadsleaderboard.R
 import com.oluwafemi.gadsleaderboard.databinding.FragmentSkillBinding
-import com.oluwafemi.gadsleaderboard.viewModels.LeaderBoardViewModel
+import com.oluwafemi.gadsleaderboard.viewModels.SkillViewModel
 
 class SkillFragment : Fragment() {
 
     private val viewModel by lazy {
-        ViewModelProvider(this).get(LeaderBoardViewModel::class.java)
+        ViewModelProvider(this).get(SkillViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

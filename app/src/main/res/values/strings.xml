@@ -5,4 +5,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="skill_leaders">Skill IQ Leaders</string>
     <string name="learning_leaders">Learning Leaders</string>
+    <string name="name">Pharis Muigai</string>
+    <string name="skill_badge">Skill Badge</string>
 </resources>
