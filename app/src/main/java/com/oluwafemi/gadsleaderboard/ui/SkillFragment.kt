@@ -11,7 +11,7 @@ import com.oluwafemi.gadsleaderboard.R
 import com.oluwafemi.gadsleaderboard.databinding.FragmentLeaderBoardBinding
 import com.oluwafemi.gadsleaderboard.viewModels.LeaderBoardViewModel
 
-class LeaderBoardFragment : Fragment() {
+class SkillFragment : Fragment() {
 
     private val viewModel by lazy {
         ViewModelProvider(this).get(LeaderBoardViewModel::class.java)
@@ -26,7 +26,7 @@ class LeaderBoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding : FragmentLeaderBoardBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_leader_board, container, false
+            inflater, R.layout.fragment_skill, container, false
         )
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
