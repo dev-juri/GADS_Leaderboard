@@ -37,7 +37,7 @@ class SkillViewModel (application: Application) : AndroidViewModel (application)
             try {
                 val listResult = getLeaders.await()
                 _skillLeaders.value = listResult
-                Log.i("SkillNetworkCall", listResult.toString())
+                Log.i("SkillNetworkCall", "Success: ${listResult.size} data fetched")
             } catch (e: Exception) {
                 Log.e("SkillNetworkCall", e.toString())
                 _skillLeaders.value = ArrayList()

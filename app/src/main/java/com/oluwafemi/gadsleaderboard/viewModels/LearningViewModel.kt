@@ -37,7 +37,7 @@ class LearningViewModel(application: Application) : AndroidViewModel(application
             try {
                 val listResult = getLeaders.await()
                 _learningLeaders.value = listResult
-                Log.i("LearningNetworkCall", listResult.toString())
+                Log.i("LearningNetworkCall", "Success: ${listResult.size} data fetched")
             } catch (e: Exception) {
                 Log.e("LearningNetworkCall", e.toString())
                 _learningLeaders.value = ArrayList()

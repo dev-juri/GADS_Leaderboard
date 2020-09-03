@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
@@ -22,7 +22,9 @@
             android:layout_marginTop="@dimen/recycler_margin"
             tools:listitem="@layout/skill_leaders"
             android:id="@+id/recycler_skill"
-            skillLeaderList="@{viewModel.skillLeaders}"
+            app:skillLeaderList="@{viewModel.skillLeaders}"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
 
     </LinearLayout>

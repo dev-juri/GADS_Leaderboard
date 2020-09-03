@@ -34,7 +34,6 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@id/person_desc"
                 app:layout_constraintEnd_toEndOf="@id/person_desc"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/person_desc"
                 app:layout_constraintTop_toTopOf="@id/skill_badge"
                 app:layout_constraintVertical_chainStyle="packed"
@@ -42,18 +41,19 @@
                 android:text="@{learningData.name}"/>
 
             <TextView
+                android:id="@+id/person_desc"
+                style="@style/ListItemBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="223 learning hours, Kenya"
-                android:id="@+id/person_desc"
-                app:layout_constraintTop_toBottomOf="@id/full_name"
-                app:layout_constraintBottom_toBottomOf="@id/skill_badge"
-                app:layout_constraintStart_toStartOf="@id/skill_badge"
-                app:layout_constraintEnd_toEndOf="parent"
-                style="@style/ListItemBody"
                 android:layout_marginStart="@dimen/toolbar_margin"
                 android:layout_marginLeft="@dimen/toolbar_margin"
-                android:text="@{learningData.contentDescription}"/>
+                android:text="@{learningData.contentDescription}"
+                app:layout_constraintBottom_toBottomOf="@id/skill_badge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.432"
+                app:layout_constraintStart_toEndOf="@id/skill_badge"
+                app:layout_constraintTop_toBottomOf="@id/full_name"
+                tools:text="223 learning hours, Kenya" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
