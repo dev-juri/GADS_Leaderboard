@@ -18,8 +18,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/small_padding"
-            android:layout_marginTop="@dimen/recycler_margin"
+            android:layout_marginTop="8dp"
             tools:listitem="@layout/skill_leaders"
             android:id="@+id/recycler_skill"
             app:skillLeaderList="@{viewModel.skillLeaders}"
