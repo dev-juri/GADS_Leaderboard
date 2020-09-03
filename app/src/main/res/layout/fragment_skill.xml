@@ -22,6 +22,7 @@
             android:layout_marginTop="@dimen/recycler_margin"
             tools:listitem="@layout/skill_leaders"
             android:id="@+id/recycler_skill"
+            skillLeaderList="@{viewModel.skillLeaders}"
             />
 
     </LinearLayout>

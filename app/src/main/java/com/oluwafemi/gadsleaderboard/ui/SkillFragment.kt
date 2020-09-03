@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.oluwafemi.gadsleaderboard.R
+import com.oluwafemi.gadsleaderboard.adapter.SkillAdapter
 import com.oluwafemi.gadsleaderboard.databinding.FragmentSkillBinding
 import com.oluwafemi.gadsleaderboard.viewModels.SkillViewModel
 
@@ -30,7 +31,7 @@ class SkillFragment : Fragment() {
         )
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
-
+        binding.recyclerSkill.adapter = SkillAdapter()
 
         return binding.root
     }

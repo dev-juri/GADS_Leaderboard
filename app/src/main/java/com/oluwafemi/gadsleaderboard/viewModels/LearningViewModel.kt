@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.oluwafemi.gadsleaderboard.models.TimeLeaders
-import com.oluwafemi.gadsleaderboard.network.GadsLeaderboardAPI
+import com.oluwafemi.gadsleaderboard.network.LeaderboardAPI
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -32,7 +32,7 @@ class LearningViewModel(application: Application) : AndroidViewModel(application
 
     private fun getLearningLeaders() {
         viewModelScope.launch {
-            val getLeaders = GadsLeaderboardAPI.GadsService.getLearningLeaders()
+            val getLeaders = LeaderboardAPI.GadsService.getLearningLeadersAsync()
 
             try {
                 val listResult = getLeaders.await()

@@ -29,10 +29,10 @@ val submissionRetrofit = retrofit.baseUrl(SUBMISSION_BASE_URL)
 
 interface GadsAPIService {
     @GET("/api/hours")
-    fun getLearningLeaders(): Deferred<List<TimeLeaders>>
+    fun getLearningLeadersAsync(): Deferred<ArrayList<TimeLeaders>>
 
     @GET("/api/skilliq")
-    fun getSkillLeaders(): Deferred<List<SkillLeaders>>
+    fun getSkillLeadersAsync(): Deferred<ArrayList<SkillLeaders>>
 }
 
 interface Submission {
@@ -46,7 +46,7 @@ interface Submission {
     ): Call<Void>
 }
 
-object GadsLeaderboardAPI {
+object LeaderboardAPI {
     val GadsService : GadsAPIService by lazy {
         leaderboardRetrofit.create(GadsAPIService::class.java)
     }
