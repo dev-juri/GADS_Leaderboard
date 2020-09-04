@@ -1,5 +1,6 @@
 package com.oluwafemi.gadsleaderboard.ui
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabTitle[position]
         }.attach()
+
+        binding.submitButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, SubmissionActivity::class.java)
+            startActivity(intent)
+        }
 
         setSupportActionBar(binding.toolBar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
