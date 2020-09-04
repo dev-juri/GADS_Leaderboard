@@ -21,7 +21,7 @@ class SubmissionActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
+    override fun onNavigateUp(): Boolean {
         finish()
         return true
     }
