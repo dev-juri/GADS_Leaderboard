@@ -1,4 +1,4 @@
-package com.oluwafemi.gadsleaderboard.ui
+package com.oluwafemi.gadsleaderboard.ui.submission
 
 import android.content.Intent
 import android.os.Bundle

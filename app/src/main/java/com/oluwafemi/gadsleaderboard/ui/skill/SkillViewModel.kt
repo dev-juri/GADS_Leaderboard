@@ -1,4 +1,4 @@
-package com.oluwafemi.gadsleaderboard.viewModels
+package com.oluwafemi.gadsleaderboard.ui.skill
 
 import android.app.Application
 import android.util.Log

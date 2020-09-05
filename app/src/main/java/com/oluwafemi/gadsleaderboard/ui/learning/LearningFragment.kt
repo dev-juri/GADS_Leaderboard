@@ -1,4 +1,4 @@
-package com.oluwafemi.gadsleaderboard.ui
+package com.oluwafemi.gadsleaderboard.ui.learning
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.oluwafemi.gadsleaderboard.R
 import com.oluwafemi.gadsleaderboard.adapter.LearningAdapter
 import com.oluwafemi.gadsleaderboard.databinding.FragmentLearningBinding
-import com.oluwafemi.gadsleaderboard.viewModels.LearningViewModel
 
 class LearningFragment : Fragment() {
 

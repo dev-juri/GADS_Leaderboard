@@ -3,7 +3,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.oluwafemi.gadsleaderboard.viewModels.LearningViewModel" />
+            type="com.oluwafemi.gadsleaderboard.ui.learning.LearningViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.LearningFragment"
+        tools:context=".ui.learning.LearningFragment"
         android:background="@color/colorAccent">
 
         <androidx.recyclerview.widget.RecyclerView

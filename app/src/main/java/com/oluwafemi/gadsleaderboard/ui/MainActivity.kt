@@ -11,6 +11,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.oluwafemi.gadsleaderboard.R
 import com.oluwafemi.gadsleaderboard.adapter.PagerAdapter
 import com.oluwafemi.gadsleaderboard.databinding.ActivityMainBinding
+import com.oluwafemi.gadsleaderboard.ui.submission.SubmissionActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding

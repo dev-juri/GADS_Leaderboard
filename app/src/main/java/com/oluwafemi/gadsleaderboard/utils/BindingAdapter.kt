@@ -1,4 +1,4 @@
-package com.oluwafemi.gadsleaderboard.adapter
+package com.oluwafemi.gadsleaderboard.utils
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView

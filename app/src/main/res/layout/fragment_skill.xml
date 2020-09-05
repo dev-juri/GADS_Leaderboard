@@ -3,7 +3,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.oluwafemi.gadsleaderboard.viewModels.SkillViewModel" />
+            type="com.oluwafemi.gadsleaderboard.ui.skill.SkillViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.SkillFragment"
+        tools:context=".ui.skill.SkillFragment"
 
         android:background="@color/colorAccent">
 

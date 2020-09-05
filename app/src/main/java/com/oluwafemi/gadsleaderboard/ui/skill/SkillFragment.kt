@@ -1,4 +1,4 @@
-package com.oluwafemi.gadsleaderboard.ui
+package com.oluwafemi.gadsleaderboard.ui.skill
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.oluwafemi.gadsleaderboard.R
 import com.oluwafemi.gadsleaderboard.adapter.SkillAdapter
 import com.oluwafemi.gadsleaderboard.databinding.FragmentSkillBinding
-import com.oluwafemi.gadsleaderboard.viewModels.SkillViewModel
 
 class SkillFragment : Fragment() {
 

@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg"
         android:orientation="vertical"
-        tools:context=".ui.SubmissionActivity">
+        tools:context=".ui.submission.SubmissionActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
