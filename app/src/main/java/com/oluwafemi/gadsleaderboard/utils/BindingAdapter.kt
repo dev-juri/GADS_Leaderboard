@@ -2,6 +2,8 @@ package com.oluwafemi.gadsleaderboard.utils
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.oluwafemi.gadsleaderboard.adapter.LearningAdapter
+import com.oluwafemi.gadsleaderboard.adapter.SkillAdapter
 import com.oluwafemi.gadsleaderboard.models.SkillLeaders
 import com.oluwafemi.gadsleaderboard.models.TimeLeaders
 

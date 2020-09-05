@@ -51,10 +51,10 @@ interface Submission {
 }
 
 object LeaderboardAPI {
-    val GadsService : GadsAPIService by lazy {
+    val GadsService: GadsAPIService by lazy {
         leaderboardRetrofit.create(GadsAPIService::class.java)
     }
-    val submissionService : Submission by lazy {
+    val submissionService: Submission by lazy {
         submissionRetrofit.create(Submission::class.java)
     }
 }

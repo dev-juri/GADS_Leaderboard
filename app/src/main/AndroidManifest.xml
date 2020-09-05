@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.submission.dialogs.ConfirmationActivity"></activity>
+        <activity android:name=".ui.submission.dialogs.ConfirmationActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
+
+        </activity>
         <activity android:name=".ui.submission.SubmissionActivity" />
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
