@@ -14,15 +14,11 @@ class SubmissionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_submission)
 
-        //binding.submissionToolbar.setNavigationIcon(R.drawable.ic_back)
-
+       binding.submissionToolbar.setNavigationOnClickListener {
+           finish()
+       }
         setSupportActionBar(binding.submissionToolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onNavigateUp(): Boolean {
-        finish()
-        return true
-    }
 }
