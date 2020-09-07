@@ -15,8 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/submission_toolbar"
-            android:padding="@dimen/toolbar_padding"
-            app:navigationIcon="@drawable/ic_back">
+            android:padding="@dimen/toolbar_padding">
 
             <ImageView
                 android:layout_height="50dp"

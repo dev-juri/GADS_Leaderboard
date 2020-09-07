@@ -30,6 +30,7 @@
         <item name="windowNoTitle">true</item>
         <item name="android:padding">@dimen/toolbar_padding</item>
         <item name="android:layout_marginTop">@dimen/toolbar_margin</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_back</item>
     </style>
 
     <style name="ToolbarButton">
