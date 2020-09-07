@@ -25,8 +25,19 @@ class SubmissionActivity : AppCompatActivity() {
             finish()
         }
         binding.submitBtn.setOnClickListener {
-            val intent = Intent(this@SubmissionActivity, ConfirmationActivity::class.java)
-            startActivityForResult(intent, 200)
+            val firstName = binding.firstName.text.toString()
+            val lastName = binding.lastName.text.toString()
+            val emailAddress = binding.emailAddress.text.toString()
+            val submissionLink = binding.githubLink.text.toString()
+
+            if (firstName.isEmpty() || lastName.isEmpty() || emailAddress.isEmpty() || submissionLink.isEmpty()) {
+                Toast.makeText(this, "No field should be left blank", Toast.LENGTH_SHORT).show()
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()) {
+                Toast.makeText(this, "Please input a correct email", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this@SubmissionActivity, ConfirmationActivity::class.java)
+                startActivityForResult(intent, 200)
+            }
         }
 
 
@@ -48,12 +59,7 @@ class SubmissionActivity : AppCompatActivity() {
         val submissionLink = binding.githubLink.text.toString()
 
         if (requestCode == 200) {
-            if (firstName.isEmpty() || lastName.isEmpty() || emailAddress.isEmpty() || submissionLink.isEmpty()) {
-                Toast.makeText(this, "No field should be left blank", Toast.LENGTH_SHORT).show()
-            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()) {
-                Toast.makeText(this, "Please input a correct email", Toast.LENGTH_SHORT).show()
-            } else {
-                try {/*
+            try {/*
                     LeaderboardAPI.submissionService.codeSubmission(
                         emailAddress,
                         firstName,
@@ -61,17 +67,16 @@ class SubmissionActivity : AppCompatActivity() {
                         submissionLink
                     )*/
 
-                    Log.i(
-                        "Submission",
-                        "Submission Successful for Mr $firstName $lastName with " +
-                                "email address $emailAddress and submission link $submissionLink"
-                    )
-                } catch (e : Exception) {
-                    Log.i(
-                        "Submission",
-                        "Submission Error: $e"
-                    )
-                }
+                Log.i(
+                    "Submission",
+                    "Submission Successful for Mr $firstName $lastName with " +
+                            "email address $emailAddress and submission link $submissionLink"
+                )
+            } catch (e: Exception) {
+                Log.i(
+                    "Submission",
+                    "Submission Error: $e"
+                )
             }
         } else {
             Log.i("Submission", "No request code, but working")

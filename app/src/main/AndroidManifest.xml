@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.submission.dialogs.ConfirmationActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
+            android:theme="@style/DialogActivity">
 
         </activity>
         <activity android:name=".ui.submission.SubmissionActivity" />

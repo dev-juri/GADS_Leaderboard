@@ -11,6 +11,10 @@
         <item name="android:textSize">@dimen/Heading</item>
     </style>
 
+    <style name="DialogActivity" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
 
     <style name="ToolbarTextAppearance">
         <item name="fontFamily">@font/roboto_bold</item>
