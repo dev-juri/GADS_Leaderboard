@@ -3,12 +3,12 @@
 
     <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
-        app:cardElevation="10dp">
+        app:cardElevation="10dp"
+        android:padding="64dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -16,8 +16,8 @@
             android:padding="32dp">
 
             <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_close_24"
                 android:background="@drawable/close_btn_bg"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -48,8 +48,7 @@
                 android:background="@drawable/transparent_btn"
                 android:padding="16dp"
                 android:textColor="@color/colorGold"
-                android:layout_marginTop="64dp"
-                android:layout_marginBottom="64dp" />
+                android:layout_margin="64dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -1,11 +1,16 @@
 package com.oluwafemi.gadsleaderboard.ui.submission
 
+import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
+import android.view.View
 import android.view.Window
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.oluwafemi.gadsleaderboard.R
@@ -20,6 +25,12 @@ class SubmissionActivity : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_submission)
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            )
+        }
         supportActionBar?.setDisplayShowTitleEnabled(false)
         binding.submissionToolbar.setNavigationOnClickListener {
             finish()
@@ -53,13 +64,16 @@ class SubmissionActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
+        val alertDialog = AlertDialog.Builder(this, R.style.DialogActivity)
+
         val firstName = binding.firstName.text.toString()
         val lastName = binding.lastName.text.toString()
         val emailAddress = binding.emailAddress.text.toString()
         val submissionLink = binding.githubLink.text.toString()
 
         if (requestCode == 200) {
-            try {/*
+            if (resultCode == Activity.RESULT_OK) {
+                try {/*
                     LeaderboardAPI.submissionService.codeSubmission(
                         emailAddress,
                         firstName,
@@ -67,19 +81,33 @@ class SubmissionActivity : AppCompatActivity() {
                         submissionLink
                     )*/
 
-                Log.i(
-                    "Submission",
-                    "Submission Successful for Mr $firstName $lastName with " +
-                            "email address $emailAddress and submission link $submissionLink"
-                )
-            } catch (e: Exception) {
-                Log.i(
-                    "Submission",
-                    "Submission Error: $e"
-                )
+                    binding.firstName.setText("")
+                    binding.lastName.setText("")
+                    binding.emailAddress.setText("")
+                    binding.githubLink.setText("")
+
+                    alertDialog.setView(View.inflate(this, R.layout.success_layout, null))
+                    alertDialog.create()
+                    alertDialog.show()
+
+                    Log.i(
+                        "Submission",
+                        "Request Code : $resultCode Submission Successful for Mr $firstName $lastName with " +
+                                "email address $emailAddress and submission link $submissionLink"
+                    )
+
+
+                } catch (e: Exception) {
+                    alertDialog.setView(View.inflate(this, R.layout.failure_layout, null))
+                    alertDialog.create()
+                    alertDialog.show()
+                    Log.i(
+                        "Submission",
+                        "Submission Error: $e"
+                    )
+
+                }
             }
-        } else {
-            Log.i("Submission", "No request code, but working")
         }
     }
 
