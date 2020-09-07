@@ -1,23 +1,16 @@
 package com.oluwafemi.gadsleaderboard.ui.submission
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
-import android.view.LayoutInflater
 import android.view.Window
-import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.oluwafemi.gadsleaderboard.R
 import com.oluwafemi.gadsleaderboard.databinding.ActivitySubmissionBinding
-import com.oluwafemi.gadsleaderboard.network.LeaderboardAPI
 import com.oluwafemi.gadsleaderboard.ui.submission.dialogs.ConfirmationActivity
-import java.lang.Exception
-import kotlin.properties.Delegates
 
 class SubmissionActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySubmissionBinding
@@ -39,6 +32,11 @@ class SubmissionActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.submissionToolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
