@@ -16,11 +16,14 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 const val LEADERS_BASE_URL = "https://gadsapi.herokuapp.com"
-const val SUBMISSION_BASE_URL = "https://docs.google.com/forms/d/e/"
+const val SUBMISSION_BASE_URL = "https://docs.google.com/forms/u/0/d/e/"
+//https://docs.google.com/forms/d/e/1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse
 
+//Test URL https://docs.google.com/forms/u/0/d/e/
 val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
+
 val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .addCallAdapterFactory(CoroutineCallAdapterFactory())
@@ -40,13 +43,15 @@ interface GadsAPIService {
 }
 
 interface Submission {
-    @POST("1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
+    //1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse
+
+    @POST("1FAIpQLScgyDYdDoeokjLakVZmdGPJQ4c2Ozg5NDgbJ71MJWeNzBG8IA/formResponse")
     @FormUrlEncoded
     fun codeSubmission(
-        @Field("entry.1824927963") emailAddress: String,
-        @Field("entry.1877115667") firstName: String,
-        @Field("entry.2006916086") lastName: String,
-        @Field("entry.284483984") githubLink: String
+        @Field("entry.987126786") emailAddress: String, // 1824927963
+        @Field("entry.261679484") firstName: String, // 1877115667
+        @Field("entry.482166579") lastName: String, // 2006916086
+        @Field("entry.1709960113") githubLink: String // 284483984
     ): Call<Void>
 }
 

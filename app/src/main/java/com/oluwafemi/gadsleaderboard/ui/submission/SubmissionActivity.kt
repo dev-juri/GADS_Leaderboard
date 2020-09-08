@@ -15,7 +15,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.oluwafemi.gadsleaderboard.R
 import com.oluwafemi.gadsleaderboard.databinding.ActivitySubmissionBinding
+import com.oluwafemi.gadsleaderboard.network.LeaderboardAPI
 import com.oluwafemi.gadsleaderboard.ui.submission.dialogs.ConfirmationActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SubmissionActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySubmissionBinding
@@ -73,40 +77,35 @@ class SubmissionActivity : AppCompatActivity() {
 
         if (requestCode == 200) {
             if (resultCode == Activity.RESULT_OK) {
-                try {/*
-                    LeaderboardAPI.submissionService.codeSubmission(
-                        emailAddress,
-                        firstName,
-                        lastName,
-                        submissionLink
-                    )*/
+                LeaderboardAPI.submissionService.codeSubmission(emailAddress, firstName, lastName, submissionLink)
+                    .enqueue(object: Callback<Void> {
+                        override fun onFailure(call: Call<Void>, t: Throwable) {
+                            alertDialog.setView(View.inflate(this@SubmissionActivity, R.layout.failure_layout, null))
+                            alertDialog.create()
+                            alertDialog.show()
+                            Log.i(
+                                "Submission",
+                                "Submission Error: $t"
+                            )
+                        }
+                        override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                            binding.firstName.setText("")
+                            binding.lastName.setText("")
+                            binding.emailAddress.setText("")
+                            binding.githubLink.setText("")
 
-                    binding.firstName.setText("")
-                    binding.lastName.setText("")
-                    binding.emailAddress.setText("")
-                    binding.githubLink.setText("")
+                            alertDialog.setView(View.inflate(this@SubmissionActivity, R.layout.success_layout, null))
+                            alertDialog.create()
+                            alertDialog.show()
 
-                    alertDialog.setView(View.inflate(this, R.layout.success_layout, null))
-                    alertDialog.create()
-                    alertDialog.show()
+                            Log.i(
+                                "Submission",
+                                "Request Code : $resultCode Submission Successful for Mr $firstName $lastName with " +
+                                        "email address $emailAddress and submission link $submissionLink"
+                            )
+                        }
 
-                    Log.i(
-                        "Submission",
-                        "Request Code : $resultCode Submission Successful for Mr $firstName $lastName with " +
-                                "email address $emailAddress and submission link $submissionLink"
-                    )
-
-
-                } catch (e: Exception) {
-                    alertDialog.setView(View.inflate(this, R.layout.failure_layout, null))
-                    alertDialog.create()
-                    alertDialog.show()
-                    Log.i(
-                        "Submission",
-                        "Submission Error: $e"
-                    )
-
-                }
+                    })
             }
         }
     }
