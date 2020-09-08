@@ -1,5 +1,4 @@
-# GADS_Leaderboard ![Android Build](https://github.com/dev-juri/NewsApp/workflows/Android%20Build/badge.svg)
-
+# GADS_Leaderboard [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin) 
 ## Description
 An app that shows fetches the top learners based off skill IQ score and learning hours.
 
