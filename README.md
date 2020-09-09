@@ -9,3 +9,11 @@ It was built using MVVM and some libraries including
 - Coroutines
 - Retrofit
 
+## Screenshots of the app
+<img src="https://github.com/dev-juri/GADS_Leaderboard/blob/master/screenshots/launcher_icon.png" alt="Icon" height="300px"/> <img src="https://github.com/dev-juri/GADS_Leaderboard/blob/master/screenshots/splash_screen.png" alt="Launch Screen" height="300px"/> <img src="https://github.com/dev-juri/GADS_Leaderboard/blob/master/screenshots/leaders_time.png" alt="Hour leaders" height="300px"/> <img src="https://github.com/dev-juri/GADS_Leaderboard/blob/master/screenshots/leaders_skill.png" alt="Skill leaders" height="300px"/><br/>
+
+<img src="https://github.com/dev-juri/GADS_Leaderboard/blob/master/screenshots/submission_activity.png" alt="Submission Screen" height="300px"/> <img src="https://github.com/dev-juri/GADS_Leaderboard/blob/master/screenshots/validation.png" alt="Validation" height="300px"/> <img src="https://github.com/dev-juri/GADS_Leaderboard/blob/master/screenshots/confirmation_dialog.png" alt="Confirmation" height="300px"/> <img src="https://github.com/dev-juri/GADS_Leaderboard/blob/master/screenshots/success_dialog.png" alt="Success" height="300px"/>
+
+
+
+
