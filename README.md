@@ -3,11 +3,13 @@
 An app that fetches the top learners of GADS 2020, based off skill IQ scores and learning hours.
 
 ## Architecture
-It was built using MVVM and some libraries including
+It was built using MVVM and Jetpack libraries including:
 - DataBinding
 - LiveData
 - Coroutines
 - Retrofit
+- Viewpager 2
+- Recyclerview
 
 ```Base URL: https://gadsapi.herokuapp.com```
 ```Learning Leaders - /api/hours```
