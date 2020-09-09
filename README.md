@@ -12,7 +12,9 @@ It was built using MVVM and Jetpack libraries including:
 - Recyclerview
 
 ```Base URL: https://gadsapi.herokuapp.com```
+
 ```Learning Leaders - /api/hours```
+
 ```Skill IQ Leaders - /api/skilliq```
 
 ## Screenshots of the app
