@@ -18,18 +18,18 @@ import retrofit2.http.POST
 const val LEADERS_BASE_URL = "https://gadsapi.herokuapp.com"
 const val SUBMISSION_BASE_URL = "https://docs.google.com/forms/d/e/"
 
-val moshi = Moshi.Builder()
+val moshiBuilder: Moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 
-val retrofit = Retrofit.Builder()
-    .addConverterFactory(MoshiConverterFactory.create(moshi))
+val retrofit: Retrofit.Builder = Retrofit.Builder()
+    .addConverterFactory(MoshiConverterFactory.create(moshiBuilder))
     .addCallAdapterFactory(CoroutineCallAdapterFactory())
 
-val leaderboardRetrofit = retrofit.baseUrl(LEADERS_BASE_URL)
+val leaderboardRetrofit: Retrofit = retrofit.baseUrl(LEADERS_BASE_URL)
     .build()
 
-val submissionRetrofit = retrofit.baseUrl(SUBMISSION_BASE_URL)
+val submissionRetrofit: Retrofit = retrofit.baseUrl(SUBMISSION_BASE_URL)
     .build()
 
 interface GadsAPIService {

@@ -77,10 +77,21 @@ class SubmissionActivity : AppCompatActivity() {
 
         if (requestCode == 200) {
             if (resultCode == Activity.RESULT_OK) {
-                LeaderboardAPI.submissionService.codeSubmission(emailAddress, firstName, lastName, submissionLink)
-                    .enqueue(object: Callback<Void> {
+                LeaderboardAPI.submissionService.codeSubmission(
+                    emailAddress,
+                    firstName,
+                    lastName,
+                    submissionLink
+                )
+                    .enqueue(object : Callback<Void> {
                         override fun onFailure(call: Call<Void>, t: Throwable) {
-                            alertDialog.setView(View.inflate(this@SubmissionActivity, R.layout.failure_layout, null))
+                            alertDialog.setView(
+                                View.inflate(
+                                    this@SubmissionActivity,
+                                    R.layout.failure_layout,
+                                    null
+                                )
+                            )
                             alertDialog.create()
                             alertDialog.show()
                             Log.i(
@@ -88,13 +99,20 @@ class SubmissionActivity : AppCompatActivity() {
                                 "Submission Error: $t"
                             )
                         }
+
                         override fun onResponse(call: Call<Void>, response: Response<Void>) {
                             binding.firstName.setText("")
                             binding.lastName.setText("")
                             binding.emailAddress.setText("")
                             binding.githubLink.setText("")
 
-                            alertDialog.setView(View.inflate(this@SubmissionActivity, R.layout.success_layout, null))
+                            alertDialog.setView(
+                                View.inflate(
+                                    this@SubmissionActivity,
+                                    R.layout.success_layout,
+                                    null
+                                )
+                            )
                             alertDialog.create()
                             alertDialog.show()
 

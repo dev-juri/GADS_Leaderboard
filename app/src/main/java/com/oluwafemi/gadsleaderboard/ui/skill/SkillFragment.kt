@@ -1,11 +1,11 @@
 package com.oluwafemi.gadsleaderboard.ui.skill
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.oluwafemi.gadsleaderboard.R
 import com.oluwafemi.gadsleaderboard.adapter.SkillAdapter
@@ -25,7 +25,7 @@ class SkillFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding : FragmentSkillBinding = DataBindingUtil.inflate(
+        val binding: FragmentSkillBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_skill, container, false
         )
         binding.lifecycleOwner = viewLifecycleOwner

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="viewModel"
             type="com.oluwafemi.gadsleaderboard.ui.learning.LearningViewModel" />
@@ -10,20 +12,19 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorAccent"
         android:orientation="vertical"
-        tools:context=".ui.learning.LearningFragment"
-        android:background="@color/colorAccent">
+        tools:context=".ui.learning.LearningFragment">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_learning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            tools:listitem="@layout/learning_leaders"
-            android:id="@+id/recycler_learning"
-            app:leaderList="@{viewModel.learningLeaders}"
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            />
+            app:leaderList="@{viewModel.learningLeaders}"
+            tools:listitem="@layout/learning_leaders" />
 
     </LinearLayout>
 </layout>
