@@ -35,10 +35,7 @@ class SubmissionActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             )
         }
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-        binding.submissionToolbar.setNavigationOnClickListener {
-            finish()
-        }
+
         binding.submitBtn.setOnClickListener {
             val firstName = binding.firstName.text.toString()
             val lastName = binding.lastName.text.toString()
@@ -57,8 +54,16 @@ class SubmissionActivity : AppCompatActivity() {
 
 
         setSupportActionBar(binding.submissionToolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
+        binding.submissionToolbar.apply {
+            setNavigationIcon(R.drawable.ic_back)
+            setNavigationOnClickListener {
+                finish()
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
